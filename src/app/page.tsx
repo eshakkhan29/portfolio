@@ -11,8 +11,8 @@ export default async function Home() {
   const { fetcher } = getData()
   const projects = await getAllProjects()
   const testimonials = await getAllTestimonials()
-  const skillList: any = await fetcher('/skills')
-  const aboutMe: any = await fetcher('/about-me')
+  const skillList: any = (await fetcher('/skills')) || {}
+  const aboutMe: any = (await fetcher('/about-me')) || {}
 
   return (
     <main>
