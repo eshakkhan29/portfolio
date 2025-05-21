@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { HeroImage } from '../../utils/images'
 import Ellipse from './Ellipse'
 
-const Hero = () => {
+const Hero = ({ aboutMe }: any) => {
   const ellipseRef = useRotatingAnimation()
   const role = useRoleSwitcher({
     roles: [
@@ -27,12 +27,7 @@ const Hero = () => {
             <span className="text-accent block text-[1.75rem] font-bold">{role}</span>
           </h1>
 
-          <h2 className="text-neutral mt-3">
-            Passionate Frontend Developer with 2+ years of experience building scalable,
-            user-focused web apps using React, Next.js, TypeScript and Node.js. Proven ability to
-            deliver high-performance, responsive UIs and collaborate with cross-functional teams.
-            Eager to contribute to fast-paced product teams and grow as a full-stack developer.
-          </h2>
+          <h2 className="text-neutral mt-3">{aboutMe}</h2>
 
           <div className="mt-6 flex flex-wrap gap-6">
             <a

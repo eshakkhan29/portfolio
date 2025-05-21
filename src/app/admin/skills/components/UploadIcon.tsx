@@ -12,7 +12,7 @@ function UploadIcon({ formik }: any) {
   }, [icon])
   return (
     <div>
-      <FileUploader setFile={setIcon} />
+      <FileUploader setFile={setIcon} title="Upload Icon" />
     </div>
   )
 }

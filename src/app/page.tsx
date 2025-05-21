@@ -12,10 +12,11 @@ export default async function Home() {
   const projects = await getAllProjects()
   const testimonials = await getAllTestimonials()
   const skillList: any = await fetcher('/skills')
+  const aboutMe: any = await fetcher('/about-me')
 
   return (
     <main>
-      <Hero />
+      <Hero aboutMe={aboutMe?.about} />
       <Skills skills={skillList?.skills || []} />
       <div className="mx-auto my-8 max-w-[1200px] px-4 md:my-[3.75rem]">
         <ProjectSection projects={projects} />
