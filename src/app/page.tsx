@@ -6,6 +6,7 @@ import Skills from '@/components/Skills/Skills'
 import TestimonialSection from '@/components/Testimonials/TestimonialSection'
 import getData from '@/lib/getData'
 import { getAllProjects, getAllTestimonials } from '@/services'
+export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   const { fetcher } = getData()
