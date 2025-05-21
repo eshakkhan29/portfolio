@@ -9,7 +9,9 @@ const Skill = ({ skill, setReFetch }: { skill: any; setReFetch: any }) => {
       await api.delete(`/skills?id=${skill._id}`)
       toast.success('Skill deleted successfully')
       setReFetch((prev: any) => !prev)
-    } catch (error) {}
+    } catch (error: any) {
+      toast.error(error?.response?.data?.message || 'Something went wrong')
+    }
   }
   return (
     <div className="border-border flex items-center gap-2 rounded-lg border p-3" key={skill._id}>

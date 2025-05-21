@@ -1,4 +1,4 @@
-import { footerLinks, languages } from '@/appData'
+import { footerLinks } from '@/appData'
 import { socials } from '@/appData/personal'
 import Logo from '../Navbar/Logo'
 
