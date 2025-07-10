@@ -1,10 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
-
-import Footer from '@/components/Footer/Footer'
-import Navbar from '@/components/Navbar/Navbar'
-import ThemeMenu from '@/components/Theme/ThemeMenu'
 import { Fira_Code } from 'next/font/google'
+import LayoutDecider from '@/components/layout/LayoutDecider'
 
 const firaCode = Fira_Code({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
 
@@ -38,7 +35,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -46,12 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body className={`${firaCode.className}`}>
-        <header>
-          <Navbar />
-        </header>
-        {children}
-        <ThemeMenu />
-        <Footer />
+        <LayoutDecider>{children}</LayoutDecider>
       </body>
     </html>
   )
